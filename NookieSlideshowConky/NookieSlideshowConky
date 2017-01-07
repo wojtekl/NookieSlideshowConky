@@ -1,0 +1,47 @@
+update_interval 60
+total_run_times 0
+double_buffer yes
+no_buffers yes
+imlib_cache_size 0
+text_buffer_size 2048
+
+own_window yes
+own_window_type override
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_argb_value 0
+own_window_argb_visual no
+own_window_colour 000000
+
+minimum_size 340 222
+maximum_width 340
+
+#default_color 595959
+#draw_shades no
+
+alignment top_right
+gap_x 20
+gap_y 45
+
+TEXT
+${texeci 600 bash -c "
+directory=\"$HOME/Pictures\"
+dim=\"big\"
+if [ \$dim == \"small\" ]; then
+  geometry=\"158x100\"
+  pos=\"155,214\"
+elif [ \$dim == \"medium\" ]; then
+  geometry=\"238x148\"
+  pos=\"85,175\"
+elif [ \$dim == \"big\" ]; then
+  geometry=\"318x200\"
+  pos=\"0,119\"
+fi
+files=(\$directory/*.*)
+let r=\"\$RANDOM % \${#files[*]}\"
+randomfile=\${files[\$r]}
+convert \$randomfile -resize \$geometry\> -size \$geometry xc:black +swap -gravity center  -composite current.png
+convert pix/photobg_bg_\$dim.png current.png -geometry +11+11 -composite result.png
+convert result.png pix/photobg_shadow_\$dim.png -composite result.png
+"}
+${image result.png -p "0,119"}
