@@ -18,5 +18,5 @@ In NookieSlideshowConky file:
 - replace 'big' with 'small' or 'medium' where 'dim=\"big\"' to set widget size.
 
 ## INSTALL
-1. Move NookieSlideshowDirectory to $HOME/.conky.
+1. Move NookieSlideshowConky directory to $HOME/.conky.
 2. Add line 'conky -c ~/NookieSlideshowConky/NookieSlideshowConky' to conky-startup.sh.
