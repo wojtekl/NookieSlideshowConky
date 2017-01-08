@@ -1,6 +1,9 @@
 # NookieSlideshowConky
 random slideshow script for Conky
 
+## SCREENSHOTS
+![Preview](/preview.png)
+
 ## AUTHORS
 - [Alessandro Roncone](http://alecive.deviantart.com/art/Nookie-Slideshow-Conky-283436023)
 - [wojtekel](http://mojemiejsce-wojtekel.rhcloud.com)
